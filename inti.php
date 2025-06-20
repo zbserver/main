@@ -2,18 +2,22 @@
 const
 p = "\033[1;97m",
 m = "\033[1;31m",
-h = "\033[1;32m",
+h = "\033[01;38;5;35m",
 k = "\033[1;33m",
 c = "\033[1;36m",
 b = "\033[1;34m",
 mp = "\033[101m\033[1;37m",
+o = "\033[01;38;5;214m",
 d = "\033[0m",
 t = "\t",
 n = "\n",
 r = "\r                                   \r",
 Error= h." [".p."Error | 0".h."]",
+name = "tahu",
+version = "xxx",
 cook = "cookie.".name,
 user = "user-agent";
+
 Function Menu_Api(){
     apikey:
     cl();
@@ -66,7 +70,7 @@ Function SaveXevil($namaData){
 Function res_api($id){$delay=7;while(true){load();$r = json_decode(file_get_contents(api_url."/res.php?key=".apikey."&action=get&id=".$id."&json=1"),1);$status = $r["status"];if($r["request"] == "CAPCHA_NOT_READY"){print r;load();sleep($delay);print r;continue;}if($status == 1){print r;print bps_cap();return $r["request"];}return 0;}}
 Function bps_cap(){
     print r;
-    print p." Bypass captcha [".h."√".p."]";
+    print p." Bypass captcha [".h." √ ".p."]";
     sleep(1);
     print r;
 }
@@ -106,11 +110,10 @@ function load(){
 }
 function ban(){
     line();
-    print "| Script         : ".name.n;
-    print "| Version        : ".version.n;
-    print "| Copyright      : Zerobot - 2025".n;
-    print "| Donation (trx) : ".h."TALrypwEaPW5JhDwg6b54KY3PFJrZkagaa".n;
-    line();
+    print m." ┌──┐┌──┬─┐   ┌┐  ┌─┬─┐".p."│ Script   -> ".name.n;
+    print m." ┌──┘├> ├┬┘┌o┐├┴┐┌o┐│  ".p."│ Version  -> ".version.n;
+    print p." └──┘└──┴└─└─┘└─┘└─┘┴  ".p."│ Channel  -> ".h."https://t.me/official_zerobot ".n;
+    line().n;
 }
 function widgetId(){
     $uuid = '';
