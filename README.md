@@ -13,8 +13,8 @@ captcha
 - authkong
 
   
-# captcha (turnstile,recaptchav2,hcaptcha,authkong)
+# captcha (turnstile,recaptchav2,hcaptcha,authkong) (Apikey)
 
-captcha($source,$pageurl);
-icaptcha($token,$theme,$icon_path);
-captcha_emot();
+- captcha($source,$pageurl);
+- icaptcha($token,$theme,$icon_path);
+- captcha_emot();
