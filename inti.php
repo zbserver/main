@@ -63,7 +63,7 @@ Function SaveXevil($namaData){
     }
     return $data;
 }
-Function res_api($id){$delay=7;while(true){load();$r = json_decode(file_get_contents(api_url."/res.php?key=".apikey."&action=get&id=".$id."&json=1"),1);$status = $r["status"];if($r["request"] == "CAPCHA_NOT_READY"){print rr;load();sleep($delay);print rr;continue;}if($status == 1){print rr;print bps_cap();return $r["request"];}return 0;}}
+Function res_api($id){$delay=7;while(true){load();$r = json_decode(file_get_contents(api_url."/res.php?key=".apikey."&action=get&id=".$id."&json=1"),1);$status = $r["status"];if($r["request"] == "CAPCHA_NOT_READY"){print r;load();sleep($delay);print r;continue;}if($status == 1){print r;print bps_cap();return $r["request"];}return 0;}}
 Function bps_cap(){
     print r;
     print p." Bypass captcha [".h."√".p."]";
