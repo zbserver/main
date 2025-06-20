@@ -238,6 +238,8 @@ function captcha($source,$pageurl){
         sleep(2);
         print r;
     }
+    $captcha = Ambil($source,'id="selectCaptcha" name="captcha"><option value="','">',1);
+    
     if($captcha == "recaptchav2"){
         $method = "userrecaptcha&googlekey="; goto gas;
     }
