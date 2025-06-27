@@ -17,6 +17,29 @@ const version = "xxxx";
 const cook = "cookie.".name;
 const user = "user-agent";
 
+Function cl(){if(PHP_OS_FAMILY == "Linux" ){system('clear');}else{pclose(popen('cls','w'));}}
+Function Line($len = 65){print p.str_repeat('',$len).n;}
+Function NoLi($no,$menu){return  h." [".p.$no.h."] ".p.$menu;}
+Function Api_Bal(){$r = json_decode(file_get_contents(api_url."/res.php?action=userinfo&key=".apikey),1);if(!$r["balance"]){Error;}return $r["balance"];}
+Function Ambil($res,$depan,$belakang,$nomor){$data=explode($belakang,explode($depan,$res)[$nomor])[0];return $data;}
+Function Antibot($source){if(preg_match("/sctg/",api_url)){return antibotXev($source);}if(preg_match("/multibot/",api_url)){return antibotMul($source);}}
+function load(){print r;print p." Bypass captcha [".h.".  ".p."]";sleep(1);print r;print p." Bypass captcha [".h.".. ".p."]";sleep(1);print r;print p." Bypass captcha [".h."...".p."]";sleep(1);}
+Function bps_anbot(){print r;print p." Bypass Antibot ".p."[".h." √ ".p."]";sleep(1);print r;}
+Function res_api($id){$delay=7;while(true){load();$r = json_decode(file_get_contents(api_url."/res.php?key=".apikey."&action=get&id=".$id."&json=1"),1);$status = $r["status"];if($r["request"] == "CAPCHA_NOT_READY"){print r;load();sleep($delay);print r;continue;}if($status == 1){print r;print bps_cap();return $r["request"];}return 0;}}
+Function bps_cap(){print r;print p." Bypass captcha [".h." √ ".p."]";sleep(1);print r;}
+function Tmr($tmr){date_default_timezone_set("UTC");$sym = [' . ',' .. ',' ...  ',' .... ',];$timr = time()+$tmr;$a = 0;while(true){$a +=1;$res=$timr-time();if($res < 1) {break;}print k." countdown".p." [ ".date('H',$res).":".p.date('i',$res).":".p.date('s',$res)." ] ".h.$sym[$a % 4]."\r";usleep(300000);}print r;}
+function ip(){$r = json_decode(file_get_contents("http://ip-api.com/json"));return $r;}
+Function Save($namaData){if(file_exists($namaData)){$data = file_get_contents($namaData);}else{$data = readline('Input '.$namaData.' : ');file_put_contents($namaData, $data);}return $data;}
+Function SaveXevil($namaData){if(file_exists($namaData)){$data = file_get_contents($namaData);}else{$data = readline('Input '.$namaData.' : ');file_put_contents($namaData, $data."|SOFTID1926406083");}return $data;}
+Function msg($str, $j = 15){$simbol = ['-', '\\', '|', '/'];for($i = $j; $i > 0; $i--){foreach($simbol as $n => $s){print p." [".k.$s.p."] ".p.$str." ".m.str_repeat(".", $n)."\r";usleep(100000);}}print "                                \r";}
+function widgetId(){$uuid = '';for ($n = 0; $n < 32; $n++){if ($n == 8 || $n == 12 || $n == 16 || $n == 20){$uuid .= '-';}$e = mt_rand(0, 15);if ($n == 12){$e = 4;}elseif ($n == 16){$e = ($e & 0x3) | 0x8;}$uuid .= dechex($e);}return $uuid;}
+function ban(){
+    print n;
+    print h." █▀▀▀▀▀  █ ".p." Script : ".name.h." [ ".p."©2025 - zerobot".h." ]".n;
+    print h." █   ".p."Z".h."   █ ".p." version: ".version.n;
+    print h." █  ▄▄▄▄▄█ ".p." Channel: ".p."t.me/official_zerobot ".n;
+    line().n;
+}
 Function Menu_Api(){
     apikey:
     cl();
@@ -42,109 +65,11 @@ Function Menu_Api(){
      else{
         print m."Bad Number";sleep(3);goto apikey;
     }
-  }
-Function cl(){if(PHP_OS_FAMILY == "Linux" ){system('clear');}else{pclose(popen('cls','w'));}}
-Function Line($len = 65){print p.str_repeat('',$len).n;}
-Function NoLi($no,$menu){return  h." [".p.$no.h."] ".p.$menu;}
-Function Api_Bal(){$r = json_decode(file_get_contents(api_url."/res.php?action=userinfo&key=".apikey),1);if(!$r["balance"]){Error;}return $r["balance"];}
-Function Ambil($res,$depan,$belakang,$nomor){$data=explode($belakang,explode($depan,$res)[$nomor])[0];return $data;}
-Function ip(){$r = json_decode(file_get_contents("http://ip-api.com/json"));return $r;}
-Function Save($namaData){
-    if(file_exists($namaData)){
-        $data = file_get_contents($namaData);
-    }else{
-        $data = readline('Input '.$namaData.' : ');
-        file_put_contents($namaData, $data);
-    }
-    return $data;
 }
-Function SaveXevil($namaData){
-    if(file_exists($namaData)){
-        $data = file_get_contents($namaData);
-    }else{
-        $data = readline('Input '.$namaData.' : ');
-        file_put_contents($namaData, $data."|SOFTID1926406083");
-    }
-    return $data;
+function pw(){
+    
 }
-Function res_api($id){$delay=7;while(true){load();$r = json_decode(file_get_contents(api_url."/res.php?key=".apikey."&action=get&id=".$id."&json=1"),1);$status = $r["status"];if($r["request"] == "CAPCHA_NOT_READY"){print r;load();sleep($delay);print r;continue;}if($status == 1){print r;print bps_cap();return $r["request"];}return 0;}}
-Function bps_cap(){
-    print r;
-    print p." Bypass captcha [".h." √ ".p."]";
-    sleep(1);
-    print r;
-}
-Function msg($str, $j = 15){
-    $simbol = ['-', '\\', '|', '/'];
-    for($i = $j; $i > 0; $i--){
-        foreach($simbol as $n => $s){
-            print p." [".k.$s.p."] ".p.$str." ".m.str_repeat(".", $n)."\r";
-            usleep(100000);
-        }
-    }
-    print "                                \r";
-}
-function Tmr($tmr){
-    date_default_timezone_set("UTC");
-    $sym = [' . ',' .. ',' ...  ',' .... ',];
-    $timr = time()+$tmr;
-    $a = 0;
-    while(true){
-        $a +=1;$res=$timr-time();
-        if($res < 1) {break;}
-        print k." countdown".p." [ ".date('H',$res).":".p.date('i',$res).":".p.date('s',$res)." ] ".h.$sym[$a % 4]."\r";
-        usleep(300000);
-    }
-    print r;
-}
-function load(){
-    print r;
-    print p." Bypass captcha [".h.".  ".p."]";
-    sleep(1);
-    print r;
-    print p." Bypass captcha [".h.".. ".p."]";
-    sleep(1);
-    print r;
-    print p." Bypass captcha [".h."...".p."]";
-    sleep(1);
-}
-print ban();
-function ban(){
-    print n;
-    print h." █▀▀▀▀▀  █ ".p." Script : ".name.h." [ ".p."©2025 - zerobot".h." ]".n;
-    print h." █   ".p."Z".h."   █ ".p." version: ".version.n;
-    print h." █  ▄▄▄▄▄█ ".p." Channel: ".p."https://t.me/official_zerobot ".n;
-    line().n;
-}
-function bani(){
-    $r = ip();
-    $cou = $r->country;
-    $cit = $r->city;
-    $que = $r->query;
-    $isp = $r->isp;
-    line();
-    print $r = p." $cou │ ".o."IP: $que ".p."│ $isp".n;
-    line();
-    print h." ┌─┐┌┐ ┌──┬──┐".p."│ Script : ".name.h." [ ".p."©2025 - zerobot".h." ]".n;
-    print h." ┌─┘├┴┐┌─┐│   ".p."│ version: ".version.n;
-    print p." └─┘└─┘└─┘┴   ".p."│ Channel: ".h."https://t.me/official_zerobot ".n;
-    line().n;
-}
-function widgetId(){
-    $uuid = '';
-    for ($n = 0; $n < 32; $n++){
-        if ($n == 8 || $n == 12 || $n == 16 || $n == 20){
-            $uuid .= '-';
-        }
-        $e = mt_rand(0, 15);
-        if ($n == 12){$e = 4;}
-        elseif ($n == 16){
-            $e = ($e & 0x3) | 0x8;
-        }
-        $uuid .= dechex($e);
-    }
-    return $uuid;
-}
+
 function icaptcha($token,$theme,$icon_path){
     $h = h();
 	$h[] = "origin: ".host;
@@ -276,7 +201,61 @@ function captcha($source,$pageurl){
     return res_api($id);
     Err:
 }
-function Bypass($url, $headers, $data = 0) {
+Function antibotMul($source){
+    $delay= 4;
+    $main = explode('"',explode('<img src="',explode('Bot links',$source)[1])[1])[0];
+	$antiBot["main"] = $main;
+	$src = explode('rel=\"',$source);
+	foreach($src as $x => $sour){
+		if($x == 0)continue;
+		$no = explode('\"',$sour)[0];
+		$img = explode('\"',explode('<img src=\"',$sour)[1])[0];
+		$antiBot[$no] = $img;
+	}
+	$ua = "Content-type: application/x-www-form-urlencoded";
+    $data = ["key"=>apikey,"method"=>"antibot","json"=>1] + $antiBot;
+    $opts = ['http' =>['method'  => 'POST','header' => $ua,'content' => http_build_query($data)]];
+    $r = json_decode(file_get_contents(api_url.'/in.php', false, stream_context_create($opts)),1);
+    $id = $r["request"];
+    while(true){
+        load();
+        $r = json_decode(file_get_contents(api_url."/res.php?key=".apikey."&action=get&id=".$id."&json=1"),1);
+        $status = $r["status"];
+        if($r["request"] == "CAPCHA_NOT_READY"){print r;load();sleep($delay);print r;continue;}
+        if($status == 1){print r;print bps_anbot();$r["request"];return "+".str_replace(",","+",$r["request"]);}
+        return 0;
+    }
+}
+function antibotXev($source){
+    $delay = 4;
+    a:
+    $bot1=explode('\"',explode('rel=\"',$source)[1])[0];
+    $bot2=explode('\"',explode('rel=\"',$source)[2])[0];
+    $bot3=explode('\"',explode('rel=\"',$source)[3])[0];
+    $main = explode('"',explode('data:image/png;base64,', $source)[1])[0];
+    $img1 = explode('"',explode('data:image/png;base64,', $source)[2])[0];
+    $img2 = explode('"',explode('data:image/png;base64,', $source)[3])[0];
+    $img3 = explode('"',explode('data:image/png;base64,', $source)[4])[0];
+    if(!$bot1){ goto a;}
+    $ua = "Content-type: application/x-www-form-urlencoded";
+    $data = array('key' => apikey,'method' => 'antibot','main' => $main,$bot1 => $img1,$bot2 => $img2,$bot3 => $img3);
+    $opts = array('http' => array('header'  => $ua,'method' => 'POST','content' => http_build_query($data)));
+    $context  = stream_context_create($opts);
+    $response = file_get_contents(api_url."/in.php", false, $context);
+    $task = explode('OK|', $response)[1];
+    if($task){
+        while(true){$r2 = file_get_contents(api_url."/res.php?key=".apikey."&id=".$task);
+            $hasil = explode('OK|', $r2)[1];
+            $antb = explode(',', $hasil);
+            if($hasil){
+                print r;print bps_anbot();
+                return "+".implode("+", $antb);
+                break;
+            }else if($r2 == "CAPCHA_NOT_READY"){print r;load();sleep($delay);print r;continue;}else{return 0;}
+        }
+    }else{goto a;}
+}
+function Bypass($url, $headers, $data = 0){
     $ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, $url);
     if ($data){
